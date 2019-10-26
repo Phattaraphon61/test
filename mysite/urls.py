@@ -18,7 +18,9 @@ from django.urls import path
 from linuxapp import views as linuxappviews
 
 urlpatterns = [
+    path('savedata', linuxappviews.savedata),
     path('', linuxappviews.index),
-    path('services', linuxappviews.services),
+    path('index', linuxappviews.index),
+    path('viewserver', linuxappviews.viewserver),
     path('admin/', admin.site.urls),
 ]

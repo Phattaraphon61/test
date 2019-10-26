@@ -5,7 +5,7 @@ from urllib.parse import parse_qsl
 from .models import Service
 
 # Create your views here.
-def services(req):
+def viewserver(req):
     if req.method == 'POST':
         post = req.POST
         s = Service()
@@ -15,12 +15,28 @@ def services(req):
         s.save()
         services = Service.objects.all()
         print(services)
-        return render(req, 'linuxapp/services.html', { 'services': services })
+        return render(req, 'linuxapp/viewserver.html', { 'services': services })
     else:
         print('ร้องขอทำมะดา')
         services = Service.objects.all()
         print(services)
-        return render(req, 'linuxapp/services.html', { 'services': services })
+        return render(req, 'linuxapp/viewserver.html', { 'services': services })
 
 def index(req):
     return render(req, 'linuxapp/index.html')
+def savedata(req):
+    if req.method == 'POST':
+        post = req.POST
+        s = Service()
+        s.icon = post['icon']
+        s.title = post['title']
+        s.detail = post['detail']
+        s.save()
+        services = Service.objects.all()
+        print(services)
+        return render(req, 'linuxapp/savedata.html', { 'services': services })
+    else:
+        print('ร้องขอทำมะดา')
+        services = Service.objects.all()
+        print(services)
+        return render(req, 'linuxapp/savedata.html', { 'services': services })

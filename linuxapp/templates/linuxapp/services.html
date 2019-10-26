@@ -10,6 +10,18 @@
     {% load static %}
     <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="{% static 'css/creative.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
     <style>
       .filled {
         width: 80%;
@@ -29,6 +41,7 @@
           <div class="spacing"><input class="filled" type="text" name="icon" value="icon ไอคอน"/></div>
           <div class="spacing"><input class="filled" type="text" name="title" value="title บริการ"/></div>
           <div class="spacing"><input class="filled" type="text" name="detail" value="detail รายละเอียด"/></div>
+          <div class="spacing"><input class="filled" type="text" name="test01" value="test รายละเอียด"/></div>
           <div class="spacing"><button style="padding: 2em;" type="submit">Submit</button></div>
         </form>
       </section>
@@ -38,12 +51,16 @@
           <th>Icon</th>
           <th>Title</th>
           <th>Detail</th>
+          <th>Test</th>
         </tr>
-        {% for s in services %}
+      {% for s in services %}
         <tr>
-          <td> <i class="fa {{s.icon}}"></i> {{ s.icon }}</td>
+          <td> <i class="fa "></i>{{ s.icon }}</td>
           <td>{{ s.title }}</td>
-          <td>{{ s.detail }}</td>
+          <td>{{ s.detail }} </td>
+          <td>{{ s.test01 }}</td>
+          <td>{{ s.id }}</td>
+          </td>
         </tr>
         {% endfor %}
       </table> 
